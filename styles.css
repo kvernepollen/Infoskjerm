@@ -1,58 +1,50 @@
-/* styles.css */
-
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #f4f4f4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  flex-direction: column;
 }
 
 .slideshow-container {
   position: relative;
   max-width: 100%;
   margin: auto;
-  text-align: center; /* Sentrerer innholdet */
+  height: 100vh; /* Fyller hele høyden på skjermen */
 }
 
 .mySlides {
   display: none;
-  padding: 20px;
+  padding: 0;
   box-sizing: border-box;
+  height: 100%; /* Fyller hele høyden på containeren */
 }
 
 h2 {
-  margin-top: 0;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+  color: white;
+  font-size: 2em;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Gir kontrast til teksten */
+  padding: 10px;
 }
 
-img {
-  width: 100%; /* Gjør bildene responsive */
-  height: auto;
+img, iframe {
+  width: 100%; /* Fyller hele bredden */
+  height: 100%; /* Fyller hele høyden */
+  object-fit: cover; /* Bevarer proporsjoner og fyller hele området */
   border: none;
-}
-
-/* For iframes: */
-iframe {
-  width: 100%; /* Gjør iframe responsive */
-  border: none;
-  min-height: 400px; /* Minimumshøyde for å unngå for små kart */
 }
 
 @media (max-width: 768px) {
-  iframe {
-    min-height: 300px; /* Reduserer høyden på iframes for mindre skjermer */
+  h2 {
+    font-size: 1.5em; /* Reduserer tekststørrelsen på mindre skjermer */
   }
 }
 
 @media (max-width: 480px) {
-  iframe {
-    min-height: 250px; /* Ytterligere justering for veldig små skjermer */
-  }
-
   h2 {
-    font-size: 1.2em; /* Reduserer størrelsen på overskrifter på små skjermer */
+    font-size: 1.2em; /* Ytterligere justering på veldig små skjermer */
   }
 }
