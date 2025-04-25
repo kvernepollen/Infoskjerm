@@ -47,6 +47,16 @@ html, body {
   object-fit: cover;
 }
 
+/* Gjør slik at slide 2 (Livbøyer og hjertestartere) fyller hele skjermen */
+.mySlides:nth-child(2) {
+  overflow: hidden; /* Fjerner scrollbars */
+}
+
+.mySlides:nth-child(2) img, .mySlides:nth-child(2) iframe {
+  width: 100%; /* Fyller hele bredden */
+  height: 100vh; /* Fyller hele høyden på visningen */
+  object-fit: cover; /* Sørger for at bildet blir beskåret (crop) for å fylle hele området */
+
 iframe {
   width: 100%;
   height: 100%;
