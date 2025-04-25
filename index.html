@@ -5,11 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Infoskjerm</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Dette er den innebygde CSS-en, som er pakket inn i <style> */
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+    }
+
+    .slideshow-container {
+      position: relative;
+      max-width: 100%;
+      margin: auto;
+    }
+
+    .mySlides {
+      display: none;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    img, iframe {
+      width: 100%; /* Gjør bildene og iframes responsive */
+      height: auto;
+      border: none;
+    }
+
+    @media (max-width: 768px) {
+      iframe {
+        height: 300px; /* Reduserer høyden på iframes for mindre skjermer */
+      }
+    }
+
+  </style>
 </head>
 <body>
 
   <div class="slideshow-container">
-
     <!-- Slide 1: Værvarsel fra YR.no -->
     <div class="mySlides fade">
       <h2>Værvarsel fra YR.no</h2>
