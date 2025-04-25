@@ -4,17 +4,24 @@ html, body {
   padding: 0;
 }
 
+.slideshow-container {
+  width: 100%;
+  height: 100vh; /* Fyll hele høyden på skjermen */
+  margin: 0;
+  padding: 0;
+}
+
 .mySlides {
   display: none;
-  padding: 0; /* Fjern padding */
+  width: 100%;
+  height: 100vh; /* Viktig: fyll hele skjermen */
   margin: 0;
-  height: 100vh; /* Full høyde av vinduet */
-  box-sizing: border-box;
+  padding: 0;
 }
 
 iframe {
   width: 100%;
   height: 100%;
   border: none;
-  object-fit: cover; /* Fyll container uten forvrengning */
+  object-fit: cover; /* Sørger for at kartet dekker hele rammen */
 }
