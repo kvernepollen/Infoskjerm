@@ -4,12 +4,18 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
 }
 
 .slideshow-container {
   position: relative;
   max-width: 100%;
   margin: auto;
+  text-align: center; /* Sentrerer innholdet */
 }
 
 .mySlides {
@@ -31,5 +37,15 @@ img, iframe {
 @media (max-width: 768px) {
   iframe {
     height: 300px; /* Reduserer høyden på iframes for mindre skjermer */
+  }
+}
+
+@media (max-width: 480px) {
+  iframe {
+    height: 200px; /* Justerer høyden på iframes for veldig små skjermer */
+  }
+
+  h2 {
+    font-size: 1.2em; /* Reduserer størrelsen på overskrifter på små skjermer */
   }
 }
