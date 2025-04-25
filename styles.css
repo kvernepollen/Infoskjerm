@@ -1,0 +1,35 @@
+/* styles.css */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+}
+
+.slideshow-container {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+}
+
+.mySlides {
+  display: none;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+img, iframe {
+  width: 100%; /* Gjør bildene og iframes responsive */
+  height: auto;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  iframe {
+    height: 300px; /* Reduserer høyden på iframes for mindre skjermer */
+  }
+}
