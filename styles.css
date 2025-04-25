@@ -28,21 +28,28 @@ h2 {
   margin-top: 0;
 }
 
-img, iframe {
-  width: 100%; /* Gjør bildene og iframes responsive */
+img {
+  width: 100%; /* Gjør bildene responsive */
   height: auto;
   border: none;
 }
 
+/* For iframes: */
+iframe {
+  width: 100%; /* Gjør iframe responsive */
+  border: none;
+  min-height: 400px; /* Minimumshøyde for å unngå for små kart */
+}
+
 @media (max-width: 768px) {
   iframe {
-    height: 300px; /* Reduserer høyden på iframes for mindre skjermer */
+    min-height: 300px; /* Reduserer høyden på iframes for mindre skjermer */
   }
 }
 
 @media (max-width: 480px) {
   iframe {
-    height: 200px; /* Justerer høyden på iframes for veldig små skjermer */
+    min-height: 250px; /* Ytterligere justering for veldig små skjermer */
   }
 
   h2 {
