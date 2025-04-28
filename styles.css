@@ -64,45 +64,55 @@ iframe {
   object-fit: cover; /* Sørger for at kartet dekker hele rammen */
 }
 
-/* Container for slide 4 */
+/* Container for begge widgetene i slide 4 */
 .slide-content-container {
   position: relative;
   width: 100%;
-  height: 100vh; /* Fyll hele høyden på skjermen */
+  height: 100vh; /* Fyll hele skjermen */
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
 }
 
-/* BarentsWatch Bølgevarsel - bakgrunn */
+/* BarentsWatch i bakgrunnen */
 .barentswatch-widget {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%; /* Fyller hele containeren */
-  z-index: 1; /* Ligger bak Flo/Fjære-widgeten */
+  height: 100%;
+  z-index: 1;
 }
 
-/* Flo og fjære-widget - plasseres oppå BarentsWatch */
+.barentswatch-widget iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Flo og fjære-widgeten oppå */
 .flo-tide-widget {
   position: absolute;
-  top: 20px; /* Litt margin fra toppen */
-  left: 20px; /* Litt margin fra venstre */
-  z-index: 2; /* Denne ligger over BarentsWatch-widgeten */
-  max-width: 300px; /* Begrens størrelsen på flo- og fjære-widgeten */
+  top: 20px;
+  left: 20px;
+  width: 300px;
+  height: 500px;
+  z-index: 2;
+}
+
+.flo-tide-widget iframe {
   width: 100%;
+  height: 100%;
+  border: none;
 }
 
 /* Responsiv justering for mobil */
 @media (max-width: 768px) {
-  .slide-content-container {
-    height: 100%; /* Sørger for at containeren er høy nok på mobil */
-  }
-
   .flo-tide-widget {
-    width: 80%; /* Reduserer størrelsen på flo- og fjære-widgeten på mobil */
-    left: 10%;
-  }
-
-  .barentswatch-widget {
-    height: 100%; /* Sørger for at BarentsWatch iframe fyller containeren */
+    width: 90%;
+    height: auto;
+    left: 5%;
+    top: 10px;
   }
 }
+
