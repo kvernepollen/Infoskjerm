@@ -102,7 +102,7 @@ iframe {
     left: 10%;
   }
 
-  .barentswatch-widget iframe {
+  .barentswatch-widget {
     height: 100%; /* Sørger for at BarentsWatch iframe fyller containeren */
   }
 }
