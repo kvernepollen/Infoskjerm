@@ -11,6 +11,7 @@ html, body {
   height: 100vh; /* Sørger for at hvert slide fyller hele høyden */
   margin: 0;
   padding: 0;
+  position: relative; /* Sikrer at absolutt posisjonering fungerer i forhold til disse */
 }
 
 .mySlides {
@@ -28,7 +29,7 @@ html, body {
 
 /* Kystverket-slide spesifikk stil */
 .kystverket-slide {
-  position: relative; /* Sørger for at vi kan plassere flo-tide-widgeten oppå */
+  position: relative; /* Gir kontroll over absolutt plassering for widgeten */
   width: 100%;
   height: 100vh;
   margin: 0;
@@ -68,9 +69,6 @@ html, body {
     width: 90%; /* Justerer bredden på widgeten på mindre skjermer */
     height: auto;
     left: 5%;
-    top: 10px;
-  }
-}
     top: 10px;
   }
 }
