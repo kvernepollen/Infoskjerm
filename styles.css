@@ -63,3 +63,46 @@ iframe {
   border: none;
   object-fit: cover; /* Sørger for at kartet dekker hele rammen */
 }
+
+/* Container for slide 4 */
+.slide-content-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Fyll hele høyden på skjermen */
+}
+
+/* BarentsWatch Bølgevarsel - bakgrunn */
+.barentswatch-widget {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Fyller hele containeren */
+  z-index: 1; /* Ligger bak Flo/Fjære-widgeten */
+}
+
+/* Flo og fjære-widget - plasseres oppå BarentsWatch */
+.flo-tide-widget {
+  position: absolute;
+  top: 20px; /* Litt margin fra toppen */
+  left: 20px; /* Litt margin fra venstre */
+  z-index: 2; /* Denne ligger over BarentsWatch-widgeten */
+  max-width: 300px; /* Begrens størrelsen på flo- og fjære-widgeten */
+  width: 100%;
+}
+
+/* Responsiv justering for mobil */
+@media (max-width: 768px) {
+  .slide-content-container {
+    height: 100%; /* Sørger for at containeren er høy nok på mobil */
+  }
+
+  .flo-tide-widget {
+    width: 80%; /* Reduserer størrelsen på flo- og fjære-widgeten på mobil */
+    left: 10%;
+  }
+
+  .barentswatch-widget iframe {
+    height: 100%; /* Sørger for at BarentsWatch iframe fyller containeren */
+  }
+}
