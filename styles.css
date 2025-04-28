@@ -30,9 +30,9 @@ html, body {
 
 /* Kystverket-slide spesifikk stil */
 .kystverket-slide {
-  position: relative; /* Sikrer at widgeten er plassert i forhold til dette elementet */
+  position: relative; /* Gir kontroll over absolutt plassering for widgeten */
   width: 100%;
-  height: 100%;
+  height: 100vh;
   margin: 0;
   padding: 0;
 }
@@ -46,11 +46,11 @@ html, body {
 
 /* Flo og fjære-widget */
 .flo-tide-widget {
-  position: absolute;
-  top: 20px; /* Plasserer widgeten 20px fra toppen */
-  left: 20px; /* Plasserer widgeten 20px fra venstre */
-  width: 320px; /* Juster bredden etter behov */
-  height: 500px; /* Juster høyden slik at innholdet vises helt */
+  position: absolute; /* Sørger for at widgeten er plassert relativt til sin container */
+  top: 0; /* Plasserer widgeten helt øverst */
+  left: 0; /* Plasserer widgeten helt til venstre */
+  width: 100%; /* Fyller hele bredden på containeren */
+  height: 100%; /* Fyller hele høyden på containeren */
   z-index: 10; /* Sørger for at widgeten vises over kartet */
   background-color: #fff; /* Gir widgeten en hvit bakgrunn for å fjerne transparens */
   border: 1px solid #ccc; /* Valgfri ramme rundt widgeten */
@@ -67,9 +67,8 @@ html, body {
 /* For mobiltilpasset visning */
 @media (max-width: 768px) {
   .flo-tide-widget {
-    width: 90%; /* Justerer bredden på widgeten på mindre skjermer */
+    width: 100%; /* Fyller hele bredden på containeren på mobile skjermer */
     height: auto;
-    left: 5%;
+    left: 0;
     top: 10px;
   }
-}
