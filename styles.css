@@ -34,17 +34,19 @@ html, body {
   object-fit: cover; /* Sørger for at kartet fyller hele rammen */
 }
 
-/* Flo og fjære-widget oppå kystverket-kartet */
-.flo-widget-overlay {
+.flo-tide-widget {
   position: absolute;
   top: 20px;
   left: 20px;
-  width: 320px;
-  height: 500px;
-  z-index: 10; /* Sørger for at widgeten vises oppå kartet */
+  width: 320px; /* Juster bredden etter behov */
+  height: 500px; /* Juster høyden slik at innholdet vises helt */
+  z-index: 2;
+  background-color: #fff; /* Legg til hvit bakgrunnsfarge for å fjerne gjennomsiktigheten */
+  border: 1px solid #ccc; /* Legg til en ramme om ønskelig */
+  box-sizing: border-box; /* Sørger for at padding og border ikke påvirker størrelsen */
 }
 
-.flo-widget-overlay iframe {
+.flo-tide-widget iframe {
   width: 100%;
   height: 100%;
   border: none;
