@@ -27,6 +27,14 @@ html, body {
 }
 
 /* Kystverket-slide spesifikk stil */
+.kystverket-slide {
+  position: relative; /* Sørger for at vi kan plassere flo-tide-widgeten oppå */
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
 .kystverket-slide iframe {
   width: 100%;
   height: 100%;
@@ -34,18 +42,20 @@ html, body {
   object-fit: cover; /* Sørger for at kartet fyller hele rammen */
 }
 
+/* Flo og fjære-widget */
 .flo-tide-widget {
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 20px; /* Plasserer widgeten 20px fra toppen */
+  left: 20px; /* Plasserer widgeten 20px fra venstre */
   width: 320px; /* Juster bredden etter behov */
   height: 500px; /* Juster høyden slik at innholdet vises helt */
-  z-index: 2;
-  background-color: #fff; /* Legg til hvit bakgrunnsfarge for å fjerne gjennomsiktigheten */
-  border: 1px solid #ccc; /* Legg til en ramme om ønskelig */
+  z-index: 2; /* Sørger for at widgeten vises over kartet */
+  background-color: #fff; /* Gir widgeten en hvit bakgrunn for å fjerne transparens */
+  border: 1px solid #ccc; /* Valgfri ramme rundt widgeten */
   box-sizing: border-box; /* Sørger for at padding og border ikke påvirker størrelsen */
 }
 
+/* Flo og fjære-widget iframe */
 .flo-tide-widget iframe {
   width: 100%;
   height: 100%;
@@ -54,10 +64,13 @@ html, body {
 
 /* For mobiltilpasset visning */
 @media (max-width: 768px) {
-  .flo-widget-overlay {
-    width: 90%;
+  .flo-tide-widget {
+    width: 90%; /* Justerer bredden på widgeten på mindre skjermer */
     height: auto;
     left: 5%;
+    top: 10px;
+  }
+}
     top: 10px;
   }
 }
