@@ -1,54 +1,56 @@
+/* Felles stil for html og body */
 html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-  background: #f4f4f4;
 }
 
-.slideshow-container, 
-.mySlides, 
-.kystverket-slide, 
-.windy-slide {
+/* Slideshow container og mySlides for alle slides */
+.slideshow-container, .mySlides {
   width: 100%;
-  height: 100vh;
+  height: 100vh; /* Sørger for at hvert slide fyller hele høyden */
   margin: 0;
   padding: 0;
-  position: relative;
-  box-sizing: border-box;
 }
 
 .mySlides {
-  display: none;
+  display: none; /* Skjuler slides som ikke vises */
+  position: relative;
 }
 
-/* Standard iframe og bilde */
-img, iframe {
+/* Windy-slide spesifikk stil */
+.windy-slide iframe {
   width: 100%;
   height: 100%;
   border: none;
-  object-fit: cover;
+  object-fit: cover; /* Fyller hele området uten å forvrenge kartet */
 }
 
-/* Slide 2 – bilde fyller skjermen */
-.mySlides:nth-child(2) {
-  overflow: hidden;
+/* Kystverket-slide spesifikk stil */
+.kystverket-slide iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  object-fit: cover; /* Sørger for at kartet fyller hele rammen */
 }
 
-/* Flo og fjære-widget oppå kartet */
+/* Flo og fjære-widget oppå kystverket-kartet */
 .flo-widget-overlay {
   position: absolute;
   top: 20px;
   left: 20px;
   width: 320px;
   height: 500px;
-  z-index: 10;
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 8px;
-  padding: 5px;
+  z-index: 10; /* Sørger for at widgeten vises oppå kartet */
 }
 
-/* Responsivt – mindre visning på mobil */
+.flo-widget-overlay iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* For mobiltilpasset visning */
 @media (max-width: 768px) {
   .flo-widget-overlay {
     width: 90%;
