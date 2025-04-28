@@ -68,36 +68,28 @@
   </iframe>
 </div>
 
-<!-- Slide 4: Bølgevarsel fra BarentsWatch og Flo/Fjære-widget -->
-<div class="mySlides fade">
-  <h2>Bølgevarsel og Flo/Fjære</h2>
+<!-- Slide 4: Kystverket-kart med flo/fjære-widget oppå -->
+<div class="mySlides fade kystverket-slide">
+  <!-- Kystverket-kartet som bakgrunn -->
+  <iframe
+    name="embedMap"
+    title="Adaptive EmbedMap"
+    scrolling="no"
+    frameborder="0"
+    src="https://kystinfo.no/embedded/575841f9-a651-49a5-87c1-17f172a7bb82">
+  </iframe>
 
-  <!-- Container for begge widgetene -->
-  <div class="slide-content-container">
-    
-    <!-- BarentsWatch Bølgevarsel iframe (bakgrunn) -->
-    <div class="barentswatch-widget">
-      <iframe 
-        src="https://www.barentswatch.no/bolgevarsel/?{¨options¨{¨useDatasetConfig¨»¨useUiState¨»¨useZoomAndCenter¨}¨state¨{¨datasetConfigs¨{¦¨enabled¨‡¨windforecastpoints¨»¨placenames¨«¨weatherstations¨»¨norgeibilder¨«¨seacurrentforecastpoints¨«¨fairways¨»¨waveforecastpoints¨»¨weather¨«¨nationalmap¨«¨navigationinstallation¨«¨pointforecasts¨»¨saltstraumen¨»¨vesselicing¨«¨waveforecastxseasarea¨»¨currentwavespoints¨»¨nauticalchart¨«¨iceconcentration¨»¨bwmapstandard¨»¨karmsundet¨»¨waveforecastareaiso¨»¨oceandepthpoints¨—¨ais¨{ß6»¨filters¨{¨countryIds¨|÷¨hideOldAis¨»¨maxAge¨¨2025-04-28T14:22:48.250Z¨¨navigationalStatus¨|ÉÊËÌÍÎÏÐÑÒ¤A¤B¤C¤D¤E¤F÷¨officialMmsiFilters¨|¨official¨¨other¨¨unofficial¨÷¨shipTypeCategories¨|¨all_other¨¨anti_pollution¨¨cargo¨¨dive_vessel¨¨fishing¨¨high_speed_craft¨¨law_enforce¨¨medical_trans¨¨military_ops¨¨passenger¨¨sar¨¨tanker¨¨tug¨÷¨showFavoritesOnly¨«}}¨langesundCurrentpoints¨{ß6»}¨oceandepthcontours¨{ß6«}¨vatlestraumen¨{ß6»}¨sortlandsundet¨{ß6»}¨gimsoysundet¨{ß6»}¨raftsundet¨{ß6»}¨tjeldsundet¨{ß6»}¨norwegianfairways¨{ß6«}}¨map¨{¨bounds¨{¦¨lat¨¨lng¨‡¨_sw¨£y.7L£4.7M¨_ne¨£y.A2£5.y—}¨center¨{ß13£4.CEß12£y.8h}¨zoom¨£B.23}¨route´/´´ui´{¦¨open¨‡¨details¨«¨menu¨«—}}"
-        width="100%"
-        height="500"
-        style="border: none;"
-        allowfullscreen>
-      </iframe>
-    </div>
-
-    <!-- Flo og fjære-widget (plassert oppå BarentsWatch) -->
-    <div class="flo-tide-widget">
-      <iframe 
-        src="https://www.kartverket.no/sehavniva/sehavniva-lokasjonside?cityid=775025&city=Oen&widget=true&refcode=cd&language=nb"
-        width="300" 
-        height="500" 
-        style="border: none;"
-        allowfullscreen>
-      </iframe>
-    </div>
-
+  <!-- Flo og fjære-widget (plassert oppå kartet) -->
+  <div class="flo-widget-overlay">
+    <iframe 
+      src="https://www.kartverket.no/sehavniva/sehavniva-lokasjonside?cityid=775025&city=Oen&widget=true&refcode=cd&language=nb"
+      width="320"
+      height="500"
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
   </div>
+</div>
 
   </div>
 
