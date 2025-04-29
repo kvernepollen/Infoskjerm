@@ -1,4 +1,4 @@
-/* Felles stil for html og body */
+/* Grunnstil */
 html, body {
   height: 100%;
   margin: 0;
@@ -7,71 +7,69 @@ html, body {
   background: #f4f4f4;
 }
 
-/* Slideshow container og mySlides for alle slides */
+/* Slideshow */
 .slideshow-container, .mySlides {
   width: 100%;
-  height: 100vh; /* Sørger for at hvert slide fyller hele høyden */
+  height: 100vh;
   margin: 0;
   padding: 0;
-  position: relative; /* Sikrer at absolutt posisjonering fungerer i forhold til disse */
-}
-
-.mySlides {
-  display: none; /* Skjuler slides som ikke vises */
   position: relative;
 }
 
-/* Windy-slide spesifikk stil */
+.mySlides {
+  display: none;
+}
+
+/* YR og bilder */
+img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  border: none;
+}
+
+/* Windy */
 .windy-slide iframe {
   width: 100%;
   height: 100%;
   border: none;
-  object-fit: cover; /* Fyller hele området uten å forvrenge kartet */
+  object-fit: cover;
 }
 
-/* Kystverket-slide spesifikk stil */
-.kystverket-slide {
-  position: relative; /* Gir kontroll over absolutt plassering for widgeten */
-  width: 100%;
-  height: 100vh; /* Sørger for at kartet fyller hele høyden */
-  margin: 0;
-  padding: 0;
-}
-
+/* Kystverket slide */
 .kystverket-slide iframe {
   width: 100%;
   height: 100%;
   border: none;
-  object-fit: cover; /* Sørger for at kartet fyller hele rammen */
+  object-fit: cover;
 }
 
-/* Flo og fjære-widget (overlay) */
+/* Flo og fjære-widget */
 .flo-widget-overlay {
-  position: absolute; /* Sørger for at widgeten er plassert på toppen av kartet */
-  top: 0; /* Plasserer widgeten på toppen */
-  left: 0; /* Plasserer widgeten til venstre */
-  width: 100%; /* Setter bredden til 100% av containeren */
-  height: 100%; /* Setter høyden til 100% av containeren */
-  z-index: 10; /* Gir høyere z-index slik at widgeten vises over kartet */
-  background-color: rgba(255, 255, 255, 0.9); /* Hvit bakgrunn med litt transparens for bedre synlighet */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 320px;
+  height: 100%;
+  z-index: 10;
+  background-color: #fff;
+  border-right: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
-/* Flo og fjære-widget iframe */
 .flo-widget-overlay iframe {
   width: 100%;
   height: 100%;
   border: none;
 }
 
-/* For mobiltilpasset visning */
+/* Mobilvisning */
 @media (max-width: 768px) {
-  iframe {
-    height: 300px; /* Reduserer høyden på iframes for mindre skjermer */
-  }
-
-  /* Tilpass widgeten for mindre skjermer */
-  .flo-widget-overlay iframe {
+  .flo-widget-overlay {
     width: 100%;
-    height: 100%;
+    height: auto;
+    position: relative;
+    top: 0;
+    left: 0;
   }
 }
