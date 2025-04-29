@@ -2,29 +2,31 @@
 <html lang="no">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Infoskjerm</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
   <div class="slideshow-container">
-    
-    <!-- Slide 1: Værvarsel fra YR.no -->
-   <div class="mySlides fade">
-  <h2 class="slide-title">Værvarsel fra YR.no</h2>
-  <div class="slide-image-container">
-    <img src="https://www.yr.no/en/content/60.529,%204.816/meteogram.svg" alt="Værvarsel">
-  </div>
-</div>
 
-    <!-- Slide 2: Kart med livbøyer og hjertestartere -->
+    <!-- Slide 1: Værvarsel fra YR -->
     <div class="mySlides fade">
-      <h2>Livbøyer og hjertestartere</h2>
-      <img src="InfoRedning.png" alt="Kart med livbøyer og hjertestartere" />
+      <h2>Værvarsel fra YR.no</h2>
+      <div class="slide-image-container">
+        <img src="https://www.yr.no/en/content/60.529,%204.816/meteogram.svg" alt="Værvarsel">
+      </div>
     </div>
 
-    <!-- Slide 3: Windy animasjon -->
+    <!-- Slide 2: Livbøyer og hjertestartere -->
+    <div class="mySlides fade">
+      <h2>Livbøyer og hjertestartere</h2>
+      <div class="slide-image-container">
+        <img src="InfoRedning.png" alt="Kart med livbøyer og hjertestartere">
+      </div>
+    </div>
+
+    <!-- Slide 3: Windy -->
     <div class="mySlides fade windy-slide">
       <iframe
         src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=default&metricTemp=default&metricWind=default&zoom=11&overlay=m/s&product=ecmwf&level=surface&lat=60.557&lon=4.86&detailLat=60.53296819772097&detailLon=4.819564819335938&marker=true&message=true&autoplay=1"
@@ -33,16 +35,20 @@
       </iframe>
     </div>
 
-    <!-- Slide 4: Kystverket + flo/fjære -->
+    <!-- Slide 4: Kystverket + flo og fjære-widget -->
     <div class="mySlides fade kystverket-slide">
+      <!-- Kystverket-kartet -->
       <iframe
-        src="https://kystinfo.no/embedded/1950306c-3f18-4734-b84e-69bc13f4386f"
-        title="Kystverket-kart"
+        name="embedMap"
+        title="Kystverket Kart"
         scrolling="no"
-        frameborder="0">
+        frameborder="0"
+        src="https://kystinfo.no/embedded/1950306c-3f18-4734-b84e-69bc13f4386f">
       </iframe>
+
+      <!-- Flo og fjære-widget -->
       <div class="flo-widget-overlay">
-        <iframe
+        <iframe 
           src="https://www.kartverket.no/sehavniva/sehavniva-lokasjonside?cityid=775025&city=Oen&widget=true&refcode=cd&language=nb"
           frameborder="0"
           allowfullscreen>
@@ -52,18 +58,20 @@
 
   </div>
 
+  <!-- Automatisk slideshow -->
   <script>
     let slideIndex = 0;
     showSlides();
+
     function showSlides() {
-      let slides = document.getElementsByClassName("mySlides");
+      const slides = document.getElementsByClassName("mySlides");
       for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
       }
       slideIndex++;
-      if (slideIndex > slides.length) { slideIndex = 1; }
+      if (slideIndex > slides.length) slideIndex = 1;
       slides[slideIndex - 1].style.display = "block";
-      setTimeout(showSlides, 15000);
+      setTimeout(showSlides, 15000); // 15 sekunder per slide
     }
   </script>
 
