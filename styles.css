@@ -21,16 +21,7 @@ html, body {
   overflow: hidden;
 }
 
-/* Felles bilde-/innholdsbehandling */
-.mySlides img,
-.mySlides iframe {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border: none;
-}
-
-/* Slide 1 og 2 – legg tittel oppå bildet */
+/* Tittel på slides (hvis brukt) */
 .mySlides h2 {
   position: absolute;
   top: 0;
@@ -41,13 +32,34 @@ html, body {
   z-index: 5;
 }
 
+/* Bildecontainer for Slide 1 og 2 */
+.slide-image-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slide-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border: none;
+}
+
 /* Windy */
 .windy-slide iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
   object-fit: cover;
 }
 
 /* Kystverket slide */
 .kystverket-slide iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
   object-fit: cover;
 }
 
