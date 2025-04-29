@@ -1,99 +1,28 @@
 <!DOCTYPE html>
 <html lang="no">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Infoskjerm</title>
-  <link rel="stylesheet" href="styles.css">
-  <style>
-    /* Felles stil for html og body */
-    html, body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-
-    /* Slideshow container og mySlides for alle slides */
-    .slideshow-container, .mySlides {
-      width: 100%;
-      height: 100vh; /* Sørger for at hvert slide fyller hele høyden */
-      margin: 0;
-      padding: 0;
-      position: relative; /* Sikrer at absolutt posisjonering fungerer i forhold til disse */
-    }
-
-    .mySlides {
-      display: none; /* Skjuler slides som ikke vises */
-      position: relative;
-    }
-
-    /* Windy-slide spesifikk stil */
-    .windy-slide iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      object-fit: cover; /* Fyller hele området uten å forvrenge kartet */
-    }
-
-    /* Kystverket-slide spesifikk stil */
-    .kystverket-slide {
-      position: relative; /* Gir kontroll over absolutt plassering for widgeten */
-      width: 100%;
-      height: 100vh;
-      margin: 0;
-      padding: 0;
-    }
-
-    .kystverket-slide iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      object-fit: cover; /* Sørger for at kartet fyller hele rammen */
-    }
-
-    /* Flo og fjære-widget */
-    .flo-widget-overlay {
-      position: absolute; /* Sørger for at widgeten er plassert på toppen av kartet */
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 10; /* Gir høyere z-index slik at widgeten vises over kartet */
-      background-color: rgba(255, 255, 255, 0.9); /* Hvit bakgrunn med litt transparens for bedre synlighet */
-    }
-
-    /* Flo og fjære-widget iframe */
-    .flo-widget-overlay iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
-    /* For mobiltilpasset visning */
-    @media (max-width: 768px) {
-      iframe {
-        height: 300px; /* Reduserer høyden på iframes for mindre skjermer */
-      }
-    }
-
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
   <div class="slideshow-container">
+    
     <!-- Slide 1: Værvarsel fra YR.no -->
     <div class="mySlides fade">
       <h2>Værvarsel fra YR.no</h2>
-      <img src="https://www.yr.no/en/content/60.529,%204.816/meteogram.svg" alt="Værvarsel">
+      <img src="https://www.yr.no/en/content/60.529,%204.816/meteogram.svg" alt="Værvarsel" />
     </div>
 
     <!-- Slide 2: Kart med livbøyer og hjertestartere -->
     <div class="mySlides fade">
       <h2>Livbøyer og hjertestartere</h2>
-      <img src="InfoRedning.png" alt="Kart med livbøyer og hjertestartere">
+      <img src="InfoRedning.png" alt="Kart med livbøyer og hjertestartere" />
     </div>
 
-    <!-- Slide 3: Væranimasjon fra Windy.com -->
+    <!-- Slide 3: Windy animasjon -->
     <div class="mySlides fade windy-slide">
       <iframe
         src="https://embed.windy.com/embed.html?type=map&location=coordinates&metricRain=default&metricTemp=default&metricWind=default&zoom=11&overlay=m/s&product=ecmwf&level=surface&lat=60.557&lon=4.86&detailLat=60.53296819772097&detailLon=4.819564819335938&marker=true&message=true&autoplay=1"
@@ -102,25 +31,17 @@
       </iframe>
     </div>
 
-    <!-- Slide 4: Kystverket-kart med flo/fjære-widget oppå -->
+    <!-- Slide 4: Kystverket + flo/fjære -->
     <div class="mySlides fade kystverket-slide">
-      <!-- Kystverket-kartet som bakgrunn -->
       <iframe
-        name="embedMap"
-        title="Adaptive EmbedMap"
+        src="https://kystinfo.no/embedded/1950306c-3f18-4734-b84e-69bc13f4386f"
+        title="Kystverket-kart"
         scrolling="no"
-        frameborder="0"
-        width="100%" 
-        height="100%" 
-        src="https://kystinfo.no/embedded/1950306c-3f18-4734-b84e-69bc13f4386f">
+        frameborder="0">
       </iframe>
-
-      <!-- Flo og fjære-widget (plassert oppå kartet) -->
       <div class="flo-widget-overlay">
         <iframe
           src="https://www.kartverket.no/sehavniva/sehavniva-lokasjonside?cityid=775025&city=Oen&widget=true&refcode=cd&language=nb"
-          width="100%" 
-          height="100%" 
           frameborder="0"
           allowfullscreen>
         </iframe>
@@ -132,16 +53,15 @@
   <script>
     let slideIndex = 0;
     showSlides();
-
     function showSlides() {
       let slides = document.getElementsByClassName("mySlides");
       for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
       }
       slideIndex++;
-      if (slideIndex > slides.length) { slideIndex = 1 }
+      if (slideIndex > slides.length) { slideIndex = 1; }
       slides[slideIndex - 1].style.display = "block";
-      setTimeout(showSlides, 15000); // Bytt slide hvert 15. sekund
+      setTimeout(showSlides, 15000);
     }
   </script>
 
