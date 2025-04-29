@@ -21,18 +21,7 @@ html, body {
   overflow: hidden;
 }
 
-/* Tittel på slides (hvis brukt) */
-.mySlides h2 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 0;
-  padding: 10px 20px;
-  background-color: rgba(255, 255, 255, 0.85);
-  z-index: 5;
-}
-
-/* Bildecontainer for Slide 1 og 2 */
+/* Felles bilde-/innholdsbehandling */
 .slide-image-container {
   width: 100%;
   height: 100%;
@@ -47,6 +36,17 @@ html, body {
   border: none;
 }
 
+/* Tittel */
+.mySlides h2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.85);
+  z-index: 5;
+}
+
 /* Windy */
 .windy-slide iframe {
   width: 100%;
@@ -55,7 +55,7 @@ html, body {
   object-fit: cover;
 }
 
-/* Kystverket slide */
+/* Kystverket */
 .kystverket-slide iframe {
   width: 100%;
   height: 100%;
