@@ -18,29 +18,36 @@ html, body {
 
 .mySlides {
   display: none;
+  overflow: hidden;
 }
 
-/* YR og bilder */
-img {
+/* Felles bilde-/innholdsbehandling */
+.mySlides img,
+.mySlides iframe {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   object-fit: cover;
   border: none;
 }
 
+/* Slide 1 og 2 – legg tittel oppå bildet */
+.mySlides h2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.85);
+  z-index: 5;
+}
+
 /* Windy */
 .windy-slide iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
   object-fit: cover;
 }
 
 /* Kystverket slide */
 .kystverket-slide iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
   object-fit: cover;
 }
 
