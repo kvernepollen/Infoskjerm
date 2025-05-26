@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="no">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Infoskjerm</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
 
   <div class="slideshow-container">
 
-    <!-- Slide 1: Værvarsel (meteogram) fra YR -->
+    <!-- Slide 1: YR meteogram (SVG) -->
     <div class="mySlides fade">
       <h2>Værvarsel fra YR.no</h2>
       <div class="slide-image-container">
@@ -22,14 +22,14 @@
       </div>
     </div>
 
-    <!-- Slide 2: Tabell fra YR -->
+    <!-- Slide 2: YR tabell -->
     <div class="mySlides fade">
       <h2>Detaljert værtabell fra YR.no</h2>
       <div class="slide-image-container">
         <iframe 
           src="https://www.yr.no/en/content/1-106248/table.html" 
-          frameborder="0" 
-          class="yr-table-iframe">
+          class="yr-table-iframe" 
+          frameborder="0">
         </iframe>
       </div>
     </div>
@@ -42,23 +42,23 @@
       </div>
     </div>
 
-    <!-- Slide 4: Kystverket + flo/fjære-widget -->
+    <!-- Slide 4: Kystverket + flo og fjære -->
     <div class="mySlides fade kystverket-slide">
-      <iframe name="embedMap" 
-        title="Adaptive EmbedMap"
-        src="https://kystinfo.no/embedded/77fbd0dc-8939-4d68-bbfc-96dfbe03aeda" 
-        scrolling="no" 
-        frameborder="0" 
-        width="100%" 
-        height="100%">
-      </iframe>
-
-      <div class="flo-widget-overlay">
-        <iframe 
-          src="https://www.kartverket.no/sehavniva/sehavniva-lokasjonside?cityid=775025&city=Oen&widget=true&refcode=cd&language=nb"
+      <div class="kystkart-container">
+        <iframe
+          title="Kystverketkart"
+          src="https://kystinfo.no/embedded/77fbd0dc-8939-4d68-bbfc-96dfbe03aeda"
           frameborder="0"
-          allowfullscreen>
+          class="kystkart-iframe">
         </iframe>
+
+        <div class="flo-widget-overlay">
+          <iframe
+            src="https://www.kartverket.no/sehavniva/sehavniva-lokasjonside?cityid=775025&city=Oen&widget=true&refcode=cd&language=nb"
+            frameborder="0"
+            allowfullscreen>
+          </iframe>
+        </div>
       </div>
     </div>
 
@@ -80,5 +80,7 @@
     }
   </script>
 
+</body>
+</html>
 </body>
 </html>
