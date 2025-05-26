@@ -1,78 +1,49 @@
-<!DOCTYPE html>
-<html lang="no">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Infoskjerm</title>
-  <link rel="stylesheet" href="styles.css"/>
-</head>
-<body>
+<div class="slideshow-container">
 
-  <div class="slideshow-container">
-
-    <!-- Slide 1: YR meteogram (SVG) -->
-    <div class="mySlides fade">
-      <div class="fullscreen-embed">
-        <embed 
-          src="https://www.yr.no/en/content/1-106248/meteogram.svg" 
-          type="image/svg+xml" />
-      </div>
-    </div>
-
-    <!-- Slide 2: YR tabell -->
-    <div class="mySlides fade">
-      <div class="fullscreen-embed">
-        <embed 
-          src="https://www.yr.no/en/content/1-106248/table.html" 
-          type="text/html" />
-      </div>
-    </div>
-
-    <!-- Slide 3: Livbøyer og hjertestartere -->
-    <div class="mySlides fade">
-      <h2>Livbøyer og hjertestartere</h2>
-      <div class="slide-image-container">
-        <img src="InfoRedning.png" alt="Kart med livbøyer og hjertestartere">
-      </div>
-    </div>
-
-    <!-- Slide 4: Kystverket + flo og fjære -->
-    <div class="mySlides fade kystverket-slide">
-      <div class="kystkart-container">
-        <iframe
-          title="Kystverketkart"
-          src="https://kystinfo.no/embedded/77fbd0dc-8939-4d68-bbfc-96dfbe03aeda"
-          frameborder="0"
-          class="kystkart-iframe">
-        </iframe>
-
-        <div class="flo-widget-overlay">
-          <iframe
-            src="https://www.kartverket.no/sehavniva/sehavniva-lokasjonside?cityid=775025&city=Oen&widget=true&refcode=cd&language=nb"
-            frameborder="0"
-            allowfullscreen>
-          </iframe>
-        </div>
-      </div>
-    </div>
-
+  <!-- Slide 1: YR meteogram -->
+  <div class="mySlides">
+    <iframe
+      class="fullscreen-frame"
+      src="https://www.yr.no/en/content/1-106248/meteogram.svg"
+      title="Værvarsel fra YR">
+    </iframe>
   </div>
 
-  <script>
-    let slideIndex = 0;
-    showSlides();
+  <!-- Slide 2: YR tabell -->
+  <div class="mySlides">
+    <iframe
+      class="fullscreen-frame"
+      src="https://www.yr.no/en/content/1-106248/table.html"
+      title="Værtabell fra YR">
+    </iframe>
+  </div>
 
-    function showSlides() {
-      let slides = document.getElementsByClassName("mySlides");
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) { slideIndex = 1 }
-      slides[slideIndex - 1].style.display = "block";
-      setTimeout(showSlides, 15000); // 15 sekunder per slide
-    }
-  </script>
+  <!-- Slide 3: Livbøyer og hjertestartere -->
+  <div class="mySlides">
+    <h2>Livbøyer og hjertestartere</h2>
+    <div class="slide-image-container">
+      <img src="InfoRedning.png" alt="Kart med livbøyer og hjertestartere">
+    </div>
+  </div>
 
-</body>
-</html>
+  <!-- Slide 4: Kystverket + flo/fjære -->
+  <div class="mySlides kystverket-slide">
+    <div class="kystkart-container">
+      <iframe
+        title="Kystverketkart"
+        src="https://kystinfo.no/embedded/77fbd0dc-8939-4d68-bbfc-96dfbe03aeda"
+        frameborder="0"
+        class="kystkart-iframe">
+      </iframe>
+
+      <div class="flo-widget-overlay">
+        <iframe
+          src="https://www.kartverket.no/sehavniva/sehavniva-lokasjonside?cityid=775025&city=Oen&widget=true&refcode=cd&language=nb"
+          frameborder="0"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+</div>
