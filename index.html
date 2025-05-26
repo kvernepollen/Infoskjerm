@@ -1,9 +1,18 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Infoskjerm</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
 <div class="slideshow-container">
 
   <!-- Slide 1: YR meteogram -->
   <div class="mySlides">
-    <iframe
-      class="fullscreen-frame"
+    <iframe class="fullscreen-frame"
       src="https://www.yr.no/en/content/1-106248/meteogram.svg"
       title="Værvarsel fra YR">
     </iframe>
@@ -11,8 +20,7 @@
 
   <!-- Slide 2: YR tabell -->
   <div class="mySlides">
-    <iframe
-      class="fullscreen-frame"
+    <iframe class="fullscreen-frame"
       src="https://www.yr.no/en/content/1-106248/table.html"
       title="Værtabell fra YR">
     </iframe>
@@ -22,28 +30,43 @@
   <div class="mySlides">
     <h2>Livbøyer og hjertestartere</h2>
     <div class="slide-image-container">
-      <img src="InfoRedning.png" alt="Kart med livbøyer og hjertestartere">
+      <img src="InfoRedning.png" alt="Kart med livbøyer og hjertestartere" />
     </div>
   </div>
 
-  <!-- Slide 4: Kystverket + flo/fjære -->
+  <!-- Slide 4: Kystverket-kart med flo/fjære-widget -->
   <div class="mySlides kystverket-slide">
     <div class="kystkart-container">
-      <iframe
-        title="Kystverketkart"
+      <iframe class="kystkart-iframe"
         src="https://kystinfo.no/embedded/77fbd0dc-8939-4d68-bbfc-96dfbe03aeda"
-        frameborder="0"
-        class="kystkart-iframe">
+        title="Kystkart">
       </iframe>
-
       <div class="flo-widget-overlay">
         <iframe
           src="https://www.kartverket.no/sehavniva/sehavniva-lokasjonside?cityid=775025&city=Oen&widget=true&refcode=cd&language=nb"
-          frameborder="0"
-          allowfullscreen>
+          title="Flo og fjære-widget">
         </iframe>
       </div>
     </div>
   </div>
 
 </div>
+
+<script>
+  let slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    const slides = document.getElementsByClassName("mySlides");
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 }
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 15000); // 15 sekunder per slide
+  }
+</script>
+
+</body>
+</html>
