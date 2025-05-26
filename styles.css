@@ -1,4 +1,4 @@
-/* Grunnoppsett */
+/* --- Grunnoppsett --- */
 html, body {
   margin: 0;
   padding: 0;
@@ -9,7 +9,7 @@ html, body {
   font-family: sans-serif;
 }
 
-/* Slideshow */
+/* --- Slideshow Container og Slides --- */
 .slideshow-container {
   width: 100vw;
   height: 100vh;
@@ -25,7 +25,7 @@ html, body {
   left: 0;
 }
 
-/* Wrapper for SVG-innhold */
+/* --- Wrapper for SVG (Slide 1) --- */
 .object-wrapper {
   width: 100vw;
   height: 100vh;
@@ -39,11 +39,12 @@ html, body {
 .full-object {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Skalerer SVG-en slik at den holder seg innenfor skjermen */
+  /* object-fit: cover fungerer i noen nettlesere – hvis ikke kan du prøve 'contain' */
+  object-fit: cover;
   border: none;
 }
 
-/* Wrapper for iframe-innhold */
+/* --- Wrapper for Iframe (Slide 2, 3 og 4 bakgrunn) --- */
 .iframe-wrapper {
   width: 100vw;
   height: 100vh;
@@ -57,7 +58,7 @@ html, body {
   border: none;
 }
 
-/* Overlegg for flo og fjære */
+/* --- Spesifikt for Slide 4 (Overlay med flo/fjære) --- */
 .flo-slide {
   position: relative;
 }
@@ -80,7 +81,7 @@ html, body {
   border: none;
 }
 
-/* Responsiv for mobil (valgfritt) */
+/* --- Eventuelt: responsiv justering for mobil --- */
 @media (max-width: 768px) {
   .flo-overlay {
     width: 100%;
