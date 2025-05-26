@@ -25,22 +25,36 @@ html, body {
   left: 0;
 }
 
-/* Felles wrapper for alle iframe-baserte slides */
-.iframe-wrapper {
+/* Wrapper for SVG-innhold */
+.object-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: #fff;
+}
+
+.full-object {
   width: 100%;
   height: 100%;
+  object-fit: contain; /* Skalerer SVG-en slik at den holder seg innenfor skjermen */
+  border: none;
+}
+
+/* Wrapper for iframe-innhold */
+.iframe-wrapper {
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
 }
 
 .iframe-wrapper iframe {
-  width: 120%;
-  height: 120%;
+  width: 100%;
+  height: 100%;
   border: none;
-  transform: scale(1.05);
-  transform-origin: top left;
 }
 
 /* Overlegg for flo og fjære */
