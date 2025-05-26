@@ -1,4 +1,8 @@
-/* === Grunnstil === */
+/* Reset og grunnstil */
+* {
+  box-sizing: border-box;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -8,10 +12,10 @@ html, body {
   background-color: #f4f4f4;
 }
 
-/* === Slideshow-oppsett === */
+/* Slideshow-oppsett */
 .slideshow-container,
 .mySlides {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   position: relative;
 }
@@ -21,32 +25,18 @@ html, body {
   overflow: hidden;
 }
 
-.fade {
-  animation: fade 1s;
-}
-
-@keyframes fade {
-  from { opacity: 0.4; }
-  to   { opacity: 1; }
-}
-
-/* === Fullskjerm embed === */
-.fullscreen-embed {
-  width: 100%;
-  height: 100%;
-}
-
-.fullscreen-embed embed {
-  width: 100%;
-  height: 100%;
+/* Fullskjerm iframe for YR-innhold */
+.fullscreen-frame {
+  width: 100vw;
+  height: 100vh;
   border: none;
   display: block;
 }
 
-/* === Livbøye-slide === */
+/* Bilde-slide */
 .slide-image-container {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -69,7 +59,7 @@ html, body {
   z-index: 5;
 }
 
-/* === Kystverket-slide === */
+/* Kystverket og flo/fjære */
 .kystverket-slide {
   width: 100%;
   height: 100%;
@@ -110,7 +100,7 @@ html, body {
   border: none;
 }
 
-/* === Mobiltilpasning === */
+/* Mobiltilpasning */
 @media (max-width: 768px) {
   .flo-widget-overlay {
     width: 100%;
