@@ -12,11 +12,13 @@
 
   <!-- Slide 1: YR meteogram -->
   <div class="mySlide">
-    <div class="iframe-wrapper">
-      <iframe
-        src="https://www.yr.no/en/content/1-106248/meteogram.svg"
-        title="Værvarsel - meteogram fra YR">
-      </iframe>
+    <div class="object-wrapper">
+      <object
+        data="https://www.yr.no/en/content/1-106248/meteogram.svg"
+        type="image/svg+xml"
+        class="full-object"
+        title="YR Meteogram">
+      </object>
     </div>
   </div>
 
@@ -25,7 +27,7 @@
     <div class="iframe-wrapper">
       <iframe
         src="https://www.yr.no/en/content/1-106248/table.html"
-        title="Værvarsel - tabell fra YR">
+        title="YR Tabellvisning">
       </iframe>
     </div>
   </div>
@@ -72,7 +74,7 @@
     slideIndex++;
     if (slideIndex > slides.length) { slideIndex = 1; }
     slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 15000);
+    setTimeout(showSlides, 15000); // 15 sekunder per slide
   }
 
   showSlides();
