@@ -1,35 +1,46 @@
 /* Reset og grunnstil */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: Arial, sans-serif;
-  background: #f4f4f4;
+  width: 100vw;
+  height: 100vh;
   overflow: hidden;
+  font-family: sans-serif;
 }
 
-/* Slideshow-oppsett */
-.slideshow-container,
-.mySlides {
+/* Slideshow container */
+.slideshow-container {
   width: 100vw;
   height: 100vh;
   position: relative;
 }
 
+/* Slides */
 .mySlides {
   display: none;
-  overflow: hidden;
-}
-
-/* Fullskjerm iframe for SVG og tabell */
-.fullscreen-frame {
   width: 100vw;
   height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Wrapper som tvinger iframe til å fylle 100% */
+.iframe-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.iframe-wrapper iframe {
+  flex: 1;
   border: none;
+  height: 100%;
+  width: 100%;
 }
 
 /* Bilde-slide */
@@ -42,41 +53,28 @@ html, body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
-/* Tittel på bildet */
-.mySlides h2 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 0;
-  padding: 10px 20px;
-  background-color: rgba(255, 255, 255, 0.85);
-  z-index: 5;
-  font-size: 1.5em;
-}
-
-/* Kystverket + flo/fjære */
+/* Kystverket-kart med flo/fjære */
 .kystverket-slide {
+  position: relative;
   width: 100%;
   height: 100%;
-  position: relative;
 }
 
 .kystkart-container {
+  position: relative;
   width: 100%;
   height: 100%;
-  position: relative;
 }
 
 .kystkart-iframe {
   position: absolute;
   top: 0;
   left: 0;
-  border: none;
   width: 100%;
   height: 100%;
+  border: none;
   z-index: 1;
 }
 
@@ -86,9 +84,9 @@ html, body {
   left: 0;
   width: 320px;
   height: 100%;
-  z-index: 2;
-  background-color: #fff;
+  background-color: white;
   border-right: 1px solid #ccc;
+  z-index: 2;
 }
 
 .flo-widget-overlay iframe {
@@ -97,14 +95,14 @@ html, body {
   border: none;
 }
 
-/* Mobilvisning */
+/* Mobiltilpasning */
 @media (max-width: 768px) {
   .flo-widget-overlay {
     width: 100%;
     height: auto;
-    position: relative;
     border-right: none;
     border-top: 1px solid #ccc;
+    position: relative;
   }
 
   .kystkart-iframe {
