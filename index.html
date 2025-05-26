@@ -10,7 +10,7 @@
 
 <div class="slideshow-container">
 
-  <!-- Slide 1: YR meteogram -->
+  <!-- Slide 1: YR Meteogram (SVG via object) -->
   <div class="mySlide">
     <div class="object-wrapper">
       <object
@@ -22,40 +22,39 @@
     </div>
   </div>
 
-  <!-- Slide 2: YR værtabell -->
+  <!-- Slide 2: YR Værtabell (HTML via iframe) -->
   <div class="mySlide">
     <div class="iframe-wrapper">
       <iframe
         src="https://www.yr.no/en/content/1-106248/table.html"
-        title="YR Tabellvisning">
+        title="YR Værtabell">
       </iframe>
     </div>
   </div>
 
-  <!-- Slide 3: Kystverket kart -->
+  <!-- Slide 3: Kystverket Kart -->
   <div class="mySlide">
     <div class="iframe-wrapper">
       <iframe
         src="https://kystinfo.no/embedded/77fbd0dc-8939-4d68-bbfc-96dfbe03aeda"
-        title="Kystverket kart">
+        title="Kystverket Kart">
       </iframe>
     </div>
   </div>
 
-  <!-- Slide 4: Flo og fjære-widget over kart -->
+  <!-- Slide 4: Kystverket Kart med Flo/Fjære-overlay -->
   <div class="mySlide">
     <div class="iframe-wrapper flo-slide">
-      <!-- Bakgrunn: Kystkart -->
+      <!-- Bakgrunn: Kystverket kart -->
       <iframe
         src="https://kystinfo.no/embedded/77fbd0dc-8939-4d68-bbfc-96dfbe03aeda"
-        title="Kystverket kart bakgrunn">
+        title="Kystverket Kart (bakgrunn)">
       </iframe>
-
-      <!-- Overlegg: Flo/fjære -->
+      <!-- Overlay: Flo og fjære-widget -->
       <div class="flo-overlay">
         <iframe
           src="https://www.kartverket.no/sehavniva/sehavniva-lokasjonside?cityid=775025&city=Oen&widget=true&refcode=cd&language=nb"
-          title="Flo og fjære-widget">
+          title="Flo og fjære">
         </iframe>
       </div>
     </div>
@@ -74,7 +73,7 @@
     slideIndex++;
     if (slideIndex > slides.length) { slideIndex = 1; }
     slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 15000); // 15 sekunder per slide
+    setTimeout(showSlides, 15000); // bytt slide hvert 15. sekund
   }
 
   showSlides();
