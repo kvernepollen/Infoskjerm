@@ -5,55 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Infoskjerm</title>
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    /* KUN for demonstrasjon – legg dette i egen CSS-fil i praksis */
-  </style>
 </head>
 <body>
 
 <div class="slideshow-container">
 
   <!-- Slide 1: YR meteogram -->
-  <div class="mySlides">
+  <div class="mySlide">
     <div class="iframe-wrapper">
       <iframe
         src="https://www.yr.no/en/content/1-106248/meteogram.svg"
-        title="Værvarsel"
-        loading="lazy">
+        title="Værvarsel - meteogram fra YR">
       </iframe>
     </div>
   </div>
 
-  <!-- Slide 2: YR tabell -->
-  <div class="mySlides">
+  <!-- Slide 2: YR værtabell -->
+  <div class="mySlide">
     <div class="iframe-wrapper">
       <iframe
         src="https://www.yr.no/en/content/1-106248/table.html"
-        title="Værtabell"
-        loading="lazy">
+        title="Værvarsel - tabell fra YR">
       </iframe>
     </div>
   </div>
 
-  <!-- Slide 3: Bilde med informasjon -->
-  <div class="mySlides">
-    <div class="slide-image-container">
-      <img src="InfoRedning.png" alt="Informasjon om livbøyer og hjertestartere" />
-    </div>
-  </div>
-
-  <!-- Slide 4: Kystverket + flo og fjære-widget -->
-  <div class="mySlides kystverket-slide">
-    <div class="kystkart-container">
+  <!-- Slide 3: Kystverket kart -->
+  <div class="mySlide">
+    <div class="iframe-wrapper">
       <iframe
         src="https://kystinfo.no/embedded/77fbd0dc-8939-4d68-bbfc-96dfbe03aeda"
-        title="Kystkart"
-        class="kystkart-iframe">
+        title="Kystverket kart">
       </iframe>
-      <div class="flo-widget-overlay">
+    </div>
+  </div>
+
+  <!-- Slide 4: Flo og fjære-widget over kart -->
+  <div class="mySlide">
+    <div class="iframe-wrapper flo-slide">
+      <!-- Bakgrunn: Kystkart -->
+      <iframe
+        src="https://kystinfo.no/embedded/77fbd0dc-8939-4d68-bbfc-96dfbe03aeda"
+        title="Kystverket kart bakgrunn">
+      </iframe>
+
+      <!-- Overlegg: Flo/fjære -->
+      <div class="flo-overlay">
         <iframe
           src="https://www.kartverket.no/sehavniva/sehavniva-lokasjonside?cityid=775025&city=Oen&widget=true&refcode=cd&language=nb"
-          title="Flo og fjære">
+          title="Flo og fjære-widget">
         </iframe>
       </div>
     </div>
@@ -63,18 +63,19 @@
 
 <script>
   let slideIndex = 0;
-  showSlides();
+  const slides = document.getElementsByClassName("mySlide");
 
   function showSlides() {
-    const slides = document.getElementsByClassName("mySlides");
     for (let i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
     }
     slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1 }
+    if (slideIndex > slides.length) { slideIndex = 1; }
     slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 15000); // 15 sekunder
+    setTimeout(showSlides, 15000);
   }
+
+  showSlides();
 </script>
 
 </body>
