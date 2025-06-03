@@ -25,16 +25,24 @@ html, body {
   left: 0;
 }
 
-/* YR meteogram som bilde */
+/* Bilder og SVG-er */
 .full-image {
   width: 100vw;
   height: 100vh;
-  object-fit: contain; /* eller bruk "cover" hvis du heller vil fylle skjermen helt og beskjære */
+  object-fit: contain; /* bytt til cover hvis ønskelig */
   display: block;
   background: #fff;
 }
 
-/* Wrapper for iframe-innhold */
+/* Iframe som fyller skjermen */
+.full-iframe {
+  width: 100vw;
+  height: 100vh;
+  border: none;
+  display: block;
+}
+
+/* Wrapper for flo og fjære-kart */
 .iframe-wrapper {
   width: 100vw;
   height: 100vh;
