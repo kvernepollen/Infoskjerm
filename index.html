@@ -19,9 +19,9 @@
     />
   </div>
 
-  <!-- Slide 2: YR værtabell (zoomet iframe) -->
+  <!-- Slide 2: YR værtabell sentrert og zoomet 2.8x -->
   <div class="mySlide">
-    <div class="iframe-wrapper zoomed-iframe-container">
+    <div class="iframe-wrapper centered-zoom-container">
       <iframe
         src="https://www.yr.no/en/content/1-106248/table.html"
         title="YR Tabellvisning"
@@ -39,16 +39,17 @@
     />
   </div>
 
-  <!-- Slide 4: Flo og fjære-widget over kart -->
+  <!-- Slide 4: Kart og flo/fjære -->
   <div class="mySlide">
     <div class="iframe-wrapper flo-slide">
       <!-- Bakgrunn: Kystkart -->
       <iframe
         src="https://kystinfo.no/embedded/77fbd0dc-8939-4d68-bbfc-96dfbe03aeda"
-        title="Kystverket kart bakgrunn">
+        title="Kystverket kart"
+        class="full-map">
       </iframe>
 
-      <!-- Overlegg: Flo/fjære -->
+      <!-- Overlegg: Flo/fjære-widget -->
       <div class="flo-overlay">
         <iframe
           src="https://www.kartverket.no/sehavniva/sehavniva-lokasjonside?cityid=775025&city=Oen&widget=true&refcode=cd&language=nb"
@@ -71,7 +72,7 @@
     slideIndex++;
     if (slideIndex > slides.length) { slideIndex = 1; }
     slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 15000); // 15 sekunder per slide
+    setTimeout(showSlides, 15000);
   }
 
   showSlides();
