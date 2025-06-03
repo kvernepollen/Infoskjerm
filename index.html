@@ -10,7 +10,7 @@
 
 <div class="slideshow-container">
 
-  <!-- Slide 1: YR meteogram som bilde (SVG fyller skjermen) -->
+  <!-- Slide 1: YR meteogram (SVG bilde) -->
   <div class="mySlide">
     <img
       src="https://www.yr.no/en/content/1-106248/meteogram.svg"
@@ -19,27 +19,34 @@
     />
   </div>
 
-  <!-- Slide 2: YR værtabell -->
+  <!-- Slide 2: YR værtabell (via iframe) -->
   <div class="mySlide">
-    <div class="iframe-wrapper">
-      <iframe
-        src="https://www.yr.no/en/content/1-106248/table.html"
-        title="YR Tabellvisning">
-      </iframe>
-    </div>
+    <iframe
+      src="https://www.yr.no/en/content/1-106248/table.html"
+      title="YR Tabellvisning"
+      class="full-iframe">
+    </iframe>
   </div>
 
-  <!-- Slide 3: Kystverket kart -->
+  <!-- Slide 3: Bilde med redningsutstyr -->
   <div class="mySlide">
-    <div class="iframe-wrapper">
-      <iframe
-        src="https://kystinfo.no/embedded/77fbd0dc-8939-4d68-bbfc-96dfbe03aeda"
-        title="Kystverket kart">
-      </iframe>
-    </div>
+    <img
+      src="InfoRedning.png"
+      alt="Kart med livbøyer og hjertestartere"
+      class="full-image"
+    />
   </div>
 
-  <!-- Slide 4: Flo og fjære-widget over kart -->
+  <!-- Slide 4: Kystverket kart -->
+  <div class="mySlide">
+    <iframe
+      src="https://kystinfo.no/embedded/77fbd0dc-8939-4d68-bbfc-96dfbe03aeda"
+      title="Kystverket kart"
+      class="full-iframe">
+    </iframe>
+  </div>
+
+  <!-- Slide 5: Flo og fjære-widget over kart -->
   <div class="mySlide">
     <div class="iframe-wrapper flo-slide">
       <!-- Bakgrunn: Kystkart -->
