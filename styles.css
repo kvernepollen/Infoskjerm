@@ -9,7 +9,7 @@ html, body {
   font-family: sans-serif;
 }
 
-/* Slideshow */
+/* Slideshow container */
 .slideshow-container {
   width: 100vw;
   height: 100vh;
@@ -25,7 +25,7 @@ html, body {
   left: 0;
 }
 
-/* Bilder */
+/* Bilde-slides */
 .full-image {
   width: 100vw;
   height: 100vh;
@@ -34,49 +34,34 @@ html, body {
   background: #fff;
 }
 
-/* Wrapper som zoomer innholdet i iframen */
-.iframe-zoom-wrapper {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  transform: scale(1.6);        /* Juster skalering her */
-  transform-origin: top left;
-}
-
-.scaled-iframe {
-  width: 100vw;
-  height: 100vh;
-  border: none;
-}
-
-/* Variant som fyller skjermen helt */
+/* Fyll hele skjermen med bilde (crop/zoom) */
 .full-image.cover {
   object-fit: cover;
 }
 
-/* Iframe som fyller skjermen */
-.full-iframe {
-  width: 100vw;
-  height: 100vh;
-  border: none;
-  display: block;
-}
-
-/* Wrapper for kart + flo/fjære-widget */
+/* Iframe-wrapper for vanlig og zoomet visning */
 .iframe-wrapper {
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
 }
 
-.iframe-wrapper iframe {
+/* Zoomet iframe */
+.zoomed-iframe-container {
+  transform: scale(1.5);            /* Juster zoom-faktor her */
+  transform-origin: top left;
+  width: calc(100vw / 1.5);
+  height: calc(100vh / 1.5);
+}
+
+.zoomed-iframe {
   width: 100vw;
   height: 100vh;
   border: none;
 }
 
-/* Overlegg for flo og fjære-widget */
+/* Flo og fjære overlay */
 .flo-slide {
   position: relative;
 }
