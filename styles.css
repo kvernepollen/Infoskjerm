@@ -34,6 +34,21 @@ html, body {
   background: #fff;
 }
 
+/* Wrapper som zoomer innholdet i iframen */
+.iframe-zoom-wrapper {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  transform: scale(1.6);        /* Juster skalering her */
+  transform-origin: top left;
+}
+
+.scaled-iframe {
+  width: 100vw;
+  height: 100vh;
+  border: none;
+}
+
 /* Variant som fyller skjermen helt */
 .full-image.cover {
   object-fit: cover;
