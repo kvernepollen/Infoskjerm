@@ -25,24 +25,16 @@ html, body {
   left: 0;
 }
 
-/* Bilder og SVG-er */
+/* Felles stil for alle bilder (meteogram, værtabell, redningskart) */
 .full-image {
   width: 100vw;
   height: 100vh;
-  object-fit: contain; /* bytt til cover hvis ønskelig */
+  object-fit: contain; /* bruk "cover" hvis du heller vil fylle hele og beskjære */
   display: block;
   background: #fff;
 }
 
-/* Iframe som fyller skjermen */
-.full-iframe {
-  width: 100vw;
-  height: 100vh;
-  border: none;
-  display: block;
-}
-
-/* Wrapper for flo og fjære-kart */
+/* Wrapper for kart + flo/fjære-widget */
 .iframe-wrapper {
   width: 100vw;
   height: 100vh;
@@ -56,7 +48,7 @@ html, body {
   border: none;
 }
 
-/* Overlegg for flo og fjære */
+/* Overlegg for flo og fjære-widget */
 .flo-slide {
   position: relative;
 }
@@ -79,7 +71,7 @@ html, body {
   border: none;
 }
 
-/* Responsiv for mobil (valgfritt) */
+/* Mobiltilpasning */
 @media (max-width: 768px) {
   .flo-overlay {
     width: 100%;
