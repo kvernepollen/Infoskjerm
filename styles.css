@@ -25,13 +25,26 @@ html, body {
   left: 0;
 }
 
-/* Felles stil for alle bilder (meteogram, værtabell, redningskart) */
+/* Bilder */
 .full-image {
   width: 100vw;
   height: 100vh;
-  object-fit: contain; /* bruk "cover" hvis du heller vil fylle hele og beskjære */
+  object-fit: contain;
   display: block;
   background: #fff;
+}
+
+/* Variant som fyller skjermen helt */
+.full-image.cover {
+  object-fit: cover;
+}
+
+/* Iframe som fyller skjermen */
+.full-iframe {
+  width: 100vw;
+  height: 100vh;
+  border: none;
+  display: block;
 }
 
 /* Wrapper for kart + flo/fjære-widget */
