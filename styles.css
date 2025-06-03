@@ -9,7 +9,7 @@ html, body {
   font-family: sans-serif;
 }
 
-/* Slideshow container */
+/* Slideshow */
 .slideshow-container {
   width: 100vw;
   height: 100vh;
@@ -34,34 +34,41 @@ html, body {
   background: #fff;
 }
 
-/* Fyll hele skjermen med bilde (crop/zoom) */
 .full-image.cover {
   object-fit: cover;
 }
 
-/* Iframe-wrapper for vanlig og zoomet visning */
+/* Iframe fullskjerm */
 .iframe-wrapper {
   width: 100vw;
   height: 100vh;
-  position: relative;
   overflow: hidden;
+  position: relative;
 }
 
-/* Zoomet iframe */
-.zoomed-iframe-container {
-  transform: scale(1.5);            /* Juster zoom-faktor her */
-  transform-origin: top left;
-  width: calc(100vw / 1.5);
-  height: calc(100vh / 1.5);
+/* Slide 2: Zoom og sentrert */
+.centered-zoom-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .zoomed-iframe {
   width: 100vw;
   height: 100vh;
+  transform: scale(2.8); /* Doblet + 40% ekstra zoom */
+  transform-origin: center center;
   border: none;
 }
 
-/* Flo og fjære overlay */
+/* Slide 4: Kystkart */
+.full-map {
+  width: 100vw;
+  height: 100vh;
+  border: none;
+}
+
+/* Flo/fjære-widget */
 .flo-slide {
   position: relative;
 }
