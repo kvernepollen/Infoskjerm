@@ -22,9 +22,17 @@ const timeoutHandle = setTimeout(() => {
 }, VENTETID);
 
 
-// Key handler
+// Touch handlers
 document.addEventListener("keydown", e => {
   if (e.key == " ") {
+    onTouch()
+  }
+})
+document.addEventListener("click", e => {
+  onTouch()
+})
+
+function onTouch() {
     let progressState = progressBar.getAttribute("data-state");
 
     if (progressState === "running" || progressState === "") {
@@ -34,8 +42,7 @@ document.addEventListener("keydown", e => {
       toNextSlide();
     }
     progressBar.setAttribute("data-state", progressState);
-  }
-})
+}
 
 // to next slide function
 function toNextSlide() {
