@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Page 4</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="slideshow-container">
+
+        <!-- Slide 4: Kart og flo/fjære -->
+        <div class="mySlide">
+            <div class="iframe-wrapper flo-slide">
+            <!-- Bakgrunn: Kystkart -->
+            <iframe
+                src="https://kystinfo.no/embedded/77fbd0dc-8939-4d68-bbfc-96dfbe03aeda"
+                title="Kystverket kart"
+                class="full-map">
+            </iframe>
+
+            <!-- Overlegg: Flo/fjære-widget -->
+            <div class="flo-overlay">
+                <iframe
+                src="https://www.kartverket.no/sehavniva/sehavniva-lokasjonside?cityid=775025&city=Oen&widget=true&refcode=cd&language=nb"
+                title="Flo og fjære-widget">
+                </iframe>
+            </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Progress bar at the bottom -->
+    <div id="progress-bar-container">
+      <div id="progress-bar" data-state="running"></div>
+    </div>
+  </body>
+  <script type="module" src="load-next.js"></script>
+</html>

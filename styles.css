@@ -1,3 +1,8 @@
+:root {
+  --background-color: #fff;
+  --progress-bar-color: green;
+}
+
 /* Grunnoppsett */
 html, body {
   margin: 0;
@@ -5,7 +10,7 @@ html, body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-color: #fff;
+  background-color: var(--background-color)
   font-family: sans-serif;
 }
 
@@ -17,7 +22,6 @@ html, body {
 }
 
 .mySlide {
-  display: none;
   width: 100vw;
   height: 100vh;
   position: absolute;
@@ -31,7 +35,7 @@ html, body {
   height: 100vh;
   object-fit: contain;
   display: block;
-  background: #fff;
+  background: var(--background-color)
 }
 
 .full-image.cover {
@@ -80,7 +84,7 @@ html, body {
   width: 320px;
   height: 100%;
   z-index: 10;
-  background-color: #fff;
+  background-color: var(--background-color);
   border-right: 1px solid #ccc;
   box-sizing: border-box;
 }
@@ -99,4 +103,41 @@ html, body {
     position: relative;
     border: none;
   }
+}
+
+/**
+ * -------- PROGRESS BAR ----------
+ * Set the size and position of the progress bar container 
+*/
+#progress-bar-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px; /* Height of the progress bar */
+  background-color: var(--background-color);
+}
+
+/* Progress bar animation */
+#progress-bar {
+  height: 100%; /* Full height of the container */
+  width: 0%; /* Initial width is 0 */
+  background-color: var(--progress-bar-color); /* Color of the progress bar */
+  animation: progress-animation 10s linear infinite; /* Animate the progress bar */
+}
+#progress-bar[data-state="running"] {
+  animation-play-state: running;
+}
+#progress-bar[data-state="paused"] {
+  animation-play-state: paused;
+}
+
+/* Keyframes for the progress bar animation */
+@keyframes progress-animation {
+  0% {
+    width: 0%;
+  } /* Start with no progress */
+  100% {
+    width: 100%;
+  } /* Fill the progress bar to full width */
 }
