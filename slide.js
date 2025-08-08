@@ -1,14 +1,20 @@
 // Config
-const VENTETID = 10_000; // ms
-const nextMap = {
-  "index.html": "index2.html",
-  "index2.html": "index3.html",
-  "index3.html": "index4.html",
-  "index4.html": "index.html",
+const slides = {
+  "/index.html": {next: "/index2.html", timeout: 18 },  // yr1
+  "/index2.html": {next: "/index3.html", timeout: 18 }, // yr2
+  "/index3.html": {next: "/index4.html", timeout: 10 }, // livbøye
+  "/index4.html": {next: "/index.html", timeout: 18 },  // kartverket
 };
 
-// Get element
+// Setup
+const params = new URLSearchParams(window.location.search);
+const current = window.location.pathname.match(/\/index\d?\.html/) ? window.location.pathname : "/index.html";
+const next    = slides[current].next;
+const timeout = slides[current].timeout;
+
+// Progressbar setup
 const progressBar = document.getElementById("progress-bar");
+document.documentElement.style.setProperty("--timeout", `${timeout}s`);
 
 
 // Timeout handler
@@ -19,7 +25,7 @@ const timeoutHandle = setTimeout(() => {
     return;
   }
   toNextSlide();
-}, VENTETID);
+}, timeout * 1_000); // ms
 
 
 // Touch handlers
@@ -46,8 +52,6 @@ function onTouch() {
 
 // to next slide function
 function toNextSlide() {
-  const params = new URLSearchParams(window.location.search);
-  const next = params.get("next") ?? nextMap["index.html"];
   
-  window.location.href = `${next}?next=${nextMap[next]}`;
+  window.location.href = `${next}?next=${slides[next].next}`;
 }
