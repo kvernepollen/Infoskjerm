@@ -1,14 +1,15 @@
 // Config
 const slides = {
-  "/index.html": {next: "/index2.html", timeout: 18 },  // yr1
-  "/index2.html": {next: "/index3.html", timeout: 18 }, // yr2
-  "/index3.html": {next: "/index4.html", timeout: 10 }, // livbøye
-  "/index4.html": {next: "/index.html", timeout: 18 },  // kartverket
+  "index.html": {next: "index2.html", timeout: 18 },  // yr1
+  "index2.html": {next: "index3.html", timeout: 18 }, // yr2
+  "index3.html": {next: "index4.html", timeout: 10 }, // livbøye
+  "index4.html": {next: "index.html", timeout: 18 },  // kartverket
 };
 
 // Setup
 const params = new URLSearchParams(window.location.search);
-const current = window.location.pathname.match(/\/index\d?\.html/) ? window.location.pathname : "/index.html";
+const matches = window.location.pathname.match(/index\d?\.html/);
+const current =  matches ? matches[0] : "index.html";
 const next    = slides[current].next;
 const timeout = slides[current].timeout;
 
